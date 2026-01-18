@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Doc Pro - Support</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #F8FAFA 0%, #E6F7F6 100%);
+            min-height: 100vh;
+            color: #1F2937;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #2EC4B6 0%, #1DA89C 100%);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            box-shadow: 0 4px 12px rgba(46, 196, 182, 0.3);
+        }
+        
+        .logo svg {
+            width: 44px;
+            height: 44px;
+            fill: white;
+        }
+        
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 8px;
+        }
+        
+        .tagline {
+            color: #6B7280;
+            font-size: 18px;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+        
+        h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1F2937;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        h2 .icon {
+            width: 32px;
+            height: 32px;
+            background: #2EC4B6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+        
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #374151;
+            margin: 24px 0 12px;
+        }
+        
+        p {
+            color: #4B5563;
+            margin-bottom: 16px;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        ul li {
+            padding: 12px 0;
+            border-bottom: 1px solid #F3F4F6;
+            color: #4B5563;
+        }
+        
+        ul li:last-child {
+            border-bottom: none;
+        }
+        
+        ul li strong {
+            color: #1F2937;
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #2EC4B6 0%, #1DA89C 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .contact-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(46, 196, 182, 0.4);
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid #F3F4F6;
+            padding: 20px 0;
+        }
+        
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #1F2937;
+            margin-bottom: 8px;
+        }
+        
+        .faq-answer {
+            color: #6B7280;
+            font-size: 15px;
+        }
+        
+        .links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin-top: 16px;
+        }
+        
+        .links a {
+            color: #2EC4B6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .links a:hover {
+            text-decoration: underline;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 32px 0;
+            color: #9CA3AF;
+            font-size: 14px;
+        }
+        
+        .footer a {
+            color: #6B7280;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            color: #2EC4B6;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px 16px;
+            }
+            
+            .section {
+                padding: 24px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .links {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9H15V22H13V16H11V22H9V9H3V7H21V9Z"/>
+                </svg>
+            </div>
+            <h1>Pet Doc Pro Support</h1>
+            <p class="tagline">We're here to help you and your pets</p>
+        </header>
+
+        <section class="section">
+            <h2><span class="icon">&#9993;</span> Contact Us</h2>
+            <p>Have a question, feedback, or need assistance? We'd love to hear from you.</p>
+            <a href="mailto:support@petdocpro.com" class="contact-btn">Email Support</a>
+            <p style="margin-top: 16px; font-size: 14px; color: #9CA3AF;">
+                Response time: Within 24-48 hours
+            </p>
+        </section>
+
+        <section class="section">
+            <h2><span class="icon">?</span> Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <p class="faq-question">How do I add a new pet?</p>
+                <p class="faq-answer">Tap the "+" button on the Pets tab to add a new pet. Fill in your pet's details including name, species, breed, and photo. You can always edit this information later.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">How do I set up medication reminders?</p>
+                <p class="faq-answer">Go to your pet's profile, tap "Add Reminder," and select the type (medication, vaccine, vet visit, etc.). Set the date, time, and frequency. You'll receive notifications at your scheduled times.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Can I use Pet Doc Pro for multiple pets?</p>
+                <p class="faq-answer">Yes! With our Unlimited Pets plan, you can add and manage as many pets as you have. The 1 Pet plan allows you to manage one pet with full features.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">How do I cancel my subscription?</p>
+                <p class="faq-answer">Go to Settings > Apple ID > Subscriptions on your iPhone, find Pet Doc Pro, and tap "Cancel Subscription." Your access continues until the end of your billing period.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Is my pet's data secure?</p>
+                <p class="faq-answer">Absolutely. We use industry-standard encryption to protect your data. We never sell your information to third parties. Your pet's health records remain private and secure.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">How do I generate a lost pet flyer?</p>
+                <p class="faq-answer">Open your pet's profile and tap "Lost Pet Flyer." Add your contact information, and a professional flyer will be generated instantly. You can share it digitally or print it.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">Can I restore my data on a new device?</p>
+                <p class="faq-answer">Yes. Sign in with the same Apple ID on your new device, and your subscription and data will be restored automatically.</p>
+            </div>
+            
+            <div class="faq-item">
+                <p class="faq-question">What happens to my data if I cancel?</p>
+                <p class="faq-answer">Your data remains on your device. If you resubscribe, you'll have full access again. We recommend exporting important records before canceling.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span class="icon">&#128176;</span> Subscription Information</h2>
+            
+            <h3>Plans & Pricing</h3>
+            <ul>
+                <li><strong>1 Pet Plan:</strong> $4.99/month or $49.99/year (save 17%)</li>
+                <li><strong>Unlimited Pets Plan:</strong> $9.99/month or $99.99/year (save 17%)</li>
+                <li><strong>Free Trial:</strong> 7 days with full access</li>
+            </ul>
+            
+            <h3>Billing Details</h3>
+            <p>
+                Payment is charged to your Apple ID account at confirmation of purchase. 
+                Subscriptions automatically renew unless canceled at least 24 hours before 
+                the end of the current period. Your account will be charged for renewal 
+                within 24 hours prior to the end of the current period.
+            </p>
+            
+            <h3>Manage Your Subscription</h3>
+            <p>
+                To manage or cancel your subscription, go to <strong>Settings > [Your Name] > 
+                Subscriptions</strong> on your iOS device.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2><span class="icon">&#128221;</span> Legal</h2>
+            <div class="links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Use</a>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2><span class="icon">&#128241;</span> App Information</h2>
+            <ul>
+                <li><strong>Current Version:</strong> 1.0.0</li>
+                <li><strong>Requires:</strong> iOS 17.0 or later</li>
+                <li><strong>Developer:</strong> Pet Doc Pro</li>
+            </ul>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2026 Pet Doc Pro. All rights reserved.</p>
+            <p style="margin-top: 8px;">
+                <a href="privacy.html">Privacy</a> &nbsp;|&nbsp; 
+                <a href="terms.html">Terms</a> &nbsp;|&nbsp; 
+                <a href="mailto:support@petdocpro.com">Contact</a>
+            </p>
+        </footer>
+    </div>
+</body>
+</html>
