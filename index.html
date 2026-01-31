@@ -3,100 +3,174 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pet Doc Pro – Pet Health Made Simple</title>
+
+  <title>Pet Doc Pro – Smarter Care for Every Pet</title>
 
   <!-- SEO -->
-  <meta name="description" content="Pet Doc Pro helps you manage pet health records, reminders, expenses, and care insights in one simple app." />
-  <meta name="keywords" content="pet health, pet records, pet reminders, vet visits, pet expenses, pet care app" />
+  <meta name="description" content="Pet Doc Pro keeps your pet’s health records, reminders, expenses, and care insights organized in one calm, reliable app." />
+  <meta name="keywords" content="pet health app, pet medical records, vet reminders, pet care, pet expenses" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Pet Doc Pro – Pet Health Made Simple" />
-  <meta property="og:description" content="Organize your pet’s health, records, reminders, and expenses in one calm, reliable app." />
+  <meta property="og:title" content="Pet Doc Pro – Smarter Care for Every Pet" />
+  <meta property="og:description" content="Everything your pet needs. One calm, reliable app." />
   <meta property="og:type" content="website" />
 
   <style>
+    :root {
+      --primary: #2EC4B6;
+      --primary-dark: #1FA59A;
+      --navy: #1f2937;
+      --muted: #6b7280;
+      --bg-soft: #f8fafc;
+      --border: #e5e7eb;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
       margin: 0;
-      padding: 0;
-      background: #ffffff;
-      color: #1f2937;
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      color: var(--navy);
       line-height: 1.6;
+      background: #ffffff;
     }
 
     header {
-      padding: 48px 20px;
+      padding: 72px 20px;
       text-align: center;
-      background: #f8fafc;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    }
+
+    header img {
+      width: 84px;
+      margin-bottom: 16px;
     }
 
     header h1 {
-      font-size: 2.4rem;
+      font-size: 2.6rem;
       margin-bottom: 12px;
-      color: #2EC4B6;
+    }
+
+    header h1 span {
+      color: var(--primary);
     }
 
     header p {
       max-width: 640px;
-      margin: 0 auto 24px;
-      font-size: 1.1rem;
+      margin: 0 auto 32px;
+      font-size: 1.15rem;
+      color: var(--muted);
     }
 
-    .button {
+    .cta {
       display: inline-block;
-      padding: 14px 24px;
-      background: #2EC4B6;
-      color: #ffffff;
+      padding: 16px 28px;
+      background: var(--primary);
+      color: #fff;
       text-decoration: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .cta.secondary {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      margin-left: 12px;
     }
 
     section {
-      max-width: 900px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 48px 20px;
+      padding: 72px 20px;
     }
 
     h2 {
-      color: #2EC4B6;
+      text-align: center;
+      font-size: 2rem;
       margin-bottom: 16px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto 48px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+
+    .feature {
+      padding: 24px;
+      border-radius: 16px;
+      background: var(--bg-soft);
+    }
+
+    .feature h3 {
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+    }
+
+    .plan {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      background: #fff;
+      position: relative;
+    }
+
+    .plan.popular {
+      border: 2px solid var(--primary);
+    }
+
+    .badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--primary);
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .plan h3 {
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 8px 0 16px;
     }
 
     ul {
       padding-left: 20px;
     }
 
-    .plans {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-    }
-
-    .plan {
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
-      padding: 24px;
-      background: #ffffff;
-    }
-
-    .plan h3 {
-      margin-top: 0;
-      color: #111827;
-    }
-
     footer {
-      background: #f8fafc;
-      padding: 24px 20px;
+      background: var(--bg-soft);
       text-align: center;
+      padding: 40px 20px;
       font-size: 0.9rem;
-      color: #6b7280;
+      color: var(--muted);
     }
 
     footer a {
-      color: #2EC4B6;
+      color: var(--primary);
       text-decoration: none;
-      margin: 0 8px;
+      margin: 0 10px;
     }
   </style>
 </head>
@@ -104,37 +178,53 @@
 <body>
 
 <header>
-  <h1>Pet Doc Pro</h1>
+  <!-- Replace src with your logo path -->
+  <img src="logo.png" alt="Pet Doc Pro Logo" />
+  <h1>Smarter care for <span>every pet</span></h1>
   <p>
-    Your pet’s health, records, reminders, and expenses — organized in one calm, reliable app built for real pet parents.
+    Pet Doc Pro keeps your pet’s health records, reminders, expenses, and care insights organized —
+    so you never miss what matters.
   </p>
-  <a class="button" href="#">Download on the App Store</a>
+  <a class="cta" href="#">Download on the App Store</a>
+  <a class="cta secondary" href="#plans">View Plans</a>
 </header>
 
 <section>
-  <h2>What Pet Doc Pro Does</h2>
-  <ul>
-    <li>Create detailed pet profiles with photos</li>
-    <li>Track health records, vaccinations, and medications</li>
-    <li>Get reminders for vet visits, meds, and important dates</li>
-    <li>Track pet care expenses and documents</li>
-    <li>Store emergency info for quick access</li>
-    <li>Sync reminders with your calendar</li>
-  </ul>
+  <h2>Why Pet Parents Choose Pet Doc Pro</h2>
+  <p class="subtitle">
+    Designed to feel calm, simple, and reliable — even in stressful moments.
+  </p>
+
+  <div class="features">
+    <div class="feature">
+      <h3>All Your Pet’s Info</h3>
+      <p>Profiles, photos, health records, documents, and emergency info — always in one place.</p>
+    </div>
+    <div class="feature">
+      <h3>Never Miss a Moment</h3>
+      <p>Medication reminders, vet visits, birthdays, and care schedules synced to your calendar.</p>
+    </div>
+    <div class="feature">
+      <h3>Smarter Decisions</h3>
+      <p>AI-powered insights help you plan care, understand costs, and stay proactive.</p>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Subscription Plans</h2>
+<section id="plans">
+  <h2>Choose the Plan That Fits Your Family</h2>
+  <p class="subtitle">
+    Start simple, upgrade anytime. Cancel whenever you want.
+  </p>
 
   <div class="plans">
 
     <div class="plan">
-      <h3>Starter – $4.99 / month</h3>
-      <p><strong>Product ID:</strong> com.petdocpro.starter.monthly</p>
+      <h3>Starter</h3>
+      <div class="price">$4.99 / month</div>
       <ul>
         <li>Pet profiles & photos</li>
-        <li>Health records</li>
-        <li>Vaccination tracking</li>
+        <li>Health & vaccination records</li>
         <li>Medication reminders</li>
         <li>Vet appointment alerts</li>
         <li>Expense tracking</li>
@@ -144,30 +234,30 @@
       </ul>
     </div>
 
-    <div class="plan">
-      <h3>Pro – $9.99 / month</h3>
-      <p><strong>Product ID:</strong> com.petdocpro.pro.monthly</p>
+    <div class="plan popular">
+      <div class="badge">Most Popular</div>
+      <h3>Pro</h3>
+      <div class="price">$9.99 / month</div>
       <ul>
-        <li>All Starter features</li>
-        <li>AI care intelligence</li>
-        <li>Expense intelligence</li>
-        <li>Birthday features</li>
+        <li>Everything in Starter</li>
+        <li>AI Care Intelligence</li>
+        <li>Expense insights & forecasts</li>
         <li>Vet visit prep</li>
+        <li>Birthday intelligence</li>
         <li>Family sharing</li>
-        <li>Care insights & projections</li>
         <li>Advanced analytics</li>
       </ul>
     </div>
 
     <div class="plan">
-      <h3>Family – $14.99 / month</h3>
-      <p><strong>Product ID:</strong> com.petdocpro.family.monthly</p>
+      <h3>Family</h3>
+      <div class="price">$14.99 / month</div>
       <ul>
         <li>Everything in Pro</li>
         <li>Unlimited pets</li>
-        <li>Priority support</li>
         <li>Multi-device sync</li>
         <li>Premium sharing</li>
+        <li>Priority support</li>
       </ul>
     </div>
 
@@ -175,21 +265,33 @@
 </section>
 
 <section>
-  <h2>Privacy & Trust</h2>
-  <ul>
-    <li>No account required</li>
-    <li>Your data stays on your device</li>
-    <li>No selling or sharing of personal data</li>
-    <li>Permissions only when needed</li>
-  </ul>
+  <h2>Your Privacy Comes First</h2>
+  <p class="subtitle">
+    Built with transparency, trust, and Apple guidelines in mind.
+  </p>
+
+  <div class="features">
+    <div class="feature">
+      <h3>No Account Required</h3>
+      <p>Start using the app instantly — no sign-ups or passwords.</p>
+    </div>
+    <div class="feature">
+      <h3>Your Data, Your Device</h3>
+      <p>Your pet’s information stays private and under your control.</p>
+    </div>
+    <div class="feature">
+      <h3>No Data Selling</h3>
+      <p>We don’t sell or share your personal information. Period.</p>
+    </div>
+  </div>
 </section>
 
-<section>
-  <h2>Support</h2>
-  <p>
-    Questions or feedback?<br />
-    Email us at <a href="mailto:petdocpro@gmail.com">petdocpro@gmail.com</a>
+<section style="text-align:center;">
+  <h2>Give Your Pet the Care They Deserve</h2>
+  <p class="subtitle">
+    Trusted by pet parents who want peace of mind, not clutter.
   </p>
+  <a class="cta" href="#">Download on the App Store</a>
 </section>
 
 <footer>
