@@ -1,354 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Doc Pro – Smart Pet Care & Medical Records</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pet Doc Pro – Pet Health Made Simple</title>
 
-    <meta name="description" content="Care smarter. Stay prepared. Pet Doc Pro helps you organize pet records, reminders, and care insights in one secure app.">
-    <meta name="keywords" content="pet care app, pet medical records, pet reminders, dog health tracker, cat health app">
+  <!-- SEO -->
+  <meta name="description" content="Pet Doc Pro helps you manage pet health records, reminders, expenses, and care insights in one simple app." />
+  <meta name="keywords" content="pet health, pet records, pet reminders, vet visits, pet expenses, pet care app" />
 
-    <meta property="og:title" content="Pet Doc Pro – Smart Pet Care">
-    <meta property="og:description" content="Organize pet records, reminders, and care insights. Simple. Secure. Built for pet families.">
-    <meta property="og:type" content="website">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Pet Doc Pro – Pet Health Made Simple" />
+  <meta property="og:description" content="Organize your pet’s health, records, reminders, and expenses in one calm, reliable app." />
+  <meta property="og:type" content="website" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      color: #1f2937;
+      line-height: 1.6;
+    }
 
-    <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
+    header {
+      padding: 48px 20px;
+      text-align: center;
+      background: #f8fafc;
+    }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background:#ffffff;
-            color:#1F2937;
-            line-height:1.6;
-        }
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+      color: #2EC4B6;
+    }
 
-        .container {
-            max-width:1200px;
-            margin:0 auto;
-            padding:0 24px;
-        }
+    header p {
+      max-width: 640px;
+      margin: 0 auto 24px;
+      font-size: 1.1rem;
+    }
 
-        nav {
-            position:fixed;
-            top:0; left:0; right:0;
-            background:rgba(255,255,255,0.95);
-            backdrop-filter:blur(16px);
-            border-bottom:1px solid #e5e7eb;
-            z-index:100;
-        }
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      background: #2EC4B6;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+    }
 
-        nav .container {
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            padding:18px 0;
-        }
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 48px 20px;
+    }
 
-        .logo {
-            display:flex;
-            align-items:center;
-            gap:12px;
-            text-decoration:none;
-            color:#1F2937;
-            font-weight:700;
-            font-size:20px;
-        }
+    h2 {
+      color: #2EC4B6;
+      margin-bottom: 16px;
+    }
 
-        .logo img {
-            width:40px;
-            height:40px;
-            border-radius:10px;
-        }
+    ul {
+      padding-left: 20px;
+    }
 
-        .nav-links {
-            display:flex;
-            gap:32px;
-            align-items:center;
-        }
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
 
-        .nav-links a {
-            text-decoration:none;
-            color:#6B7280;
-            font-weight:500;
-            font-size:15px;
-        }
+    .plan {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 24px;
+      background: #ffffff;
+    }
 
-        .nav-links a:hover { color:#2EC4B6; }
+    .plan h3 {
+      margin-top: 0;
+      color: #111827;
+    }
 
-        .download-btn {
-            background:#1F2937;
-            color:white !important;
-            padding:10px 20px;
-            border-radius:8px;
-            font-weight:600;
-        }
+    footer {
+      background: #f8fafc;
+      padding: 24px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
 
-        .hero {
-            padding:160px 0 110px;
-            background:linear-gradient(180deg,#F8FAFA 0%,#ffffff 100%);
-            text-align:center;
-        }
-
-        .hero img {
-            width:120px;
-            height:120px;
-            border-radius:28px;
-            margin-bottom:32px;
-            box-shadow:0 10px 30px rgba(0,0,0,0.12);
-        }
-
-        .hero h1 {
-            font-size:56px;
-            font-weight:800;
-            line-height:1.1;
-            margin-bottom:24px;
-        }
-
-        .hero h1 span {
-            background:linear-gradient(135deg,#2EC4B6,#1DA89C);
-            -webkit-background-clip:text;
-            -webkit-text-fill-color:transparent;
-        }
-
-        .hero p {
-            max-width:620px;
-            margin:0 auto 40px;
-            font-size:20px;
-            color:#6B7280;
-        }
-
-        .btn-primary {
-            background:linear-gradient(135deg,#2EC4B6,#1DA89C);
-            color:white;
-            padding:16px 32px;
-            border-radius:12px;
-            font-weight:600;
-            font-size:16px;
-            text-decoration:none;
-            display:inline-flex;
-            align-items:center;
-            gap:10px;
-        }
-
-        .features {
-            padding:100px 0;
-        }
-
-        .section-header {
-            text-align:center;
-            margin-bottom:64px;
-        }
-
-        .section-header h2 {
-            font-size:40px;
-            font-weight:700;
-            margin-bottom:12px;
-        }
-
-        .section-header p {
-            color:#6B7280;
-            max-width:620px;
-            margin:0 auto;
-        }
-
-        .features-grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-            gap:32px;
-        }
-
-        .feature-card {
-            background:#F8FAFA;
-            border-radius:20px;
-            padding:32px;
-        }
-
-        .pricing {
-            padding:110px 0;
-            background:#F8FAFA;
-        }
-
-        .pricing-grid {
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:32px;
-            margin-top:48px;
-        }
-
-        .pricing-card {
-            background:white;
-            border-radius:22px;
-            padding:36px;
-            border:1px solid #e5e7eb;
-        }
-
-        .pricing-card.popular {
-            border:2px solid #2EC4B6;
-        }
-
-        .badge {
-            display:inline-block;
-            padding:6px 12px;
-            font-size:12px;
-            border-radius:999px;
-            font-weight:700;
-            margin-bottom:12px;
-        }
-
-        .badge.popular { background:#2EC4B6; color:white; }
-        .badge.best { background:#6366f1; color:white; }
-
-        .price {
-            font-size:36px;
-            font-weight:800;
-            margin:12px 0;
-        }
-
-        .price span {
-            font-size:16px;
-            color:#6B7280;
-            font-weight:500;
-        }
-
-        ul { list-style:none; margin-top:20px; }
-
-        ul li {
-            padding:8px 0;
-            display:flex;
-            gap:10px;
-            color:#374151;
-        }
-
-        ul li::before {
-            content:"✓";
-            color:#2EC4B6;
-            font-weight:700;
-        }
-
-        .fineprint {
-            margin-top:48px;
-            text-align:center;
-            color:#6B7280;
-            font-size:14px;
-        }
-
-        footer {
-            background:#1F2937;
-            color:#9CA3AF;
-            padding:48px 0;
-        }
-
-        footer a {
-            color:#9CA3AF;
-            text-decoration:none;
-            margin-left:24px;
-            font-size:14px;
-        }
-
-        @media (max-width:600px) {
-            .hero h1 { font-size:36px; }
-            .nav-links { display:none; }
-        }
-    </style>
+    footer a {
+      color: #2EC4B6;
+      text-decoration: none;
+      margin: 0 8px;
+    }
+  </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="container">
-        <a class="logo" href="#">
-            <img src="appicon.png" alt="Pet Doc Pro">
-            Pet Doc Pro
-        </a>
-        <div class="nav-links">
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
-            <a href="support.html">Support</a>
-            <a class="download-btn" href="#">Download</a>
-        </div>
-    </div>
-</nav>
+<header>
+  <h1>Pet Doc Pro</h1>
+  <p>
+    Your pet’s health, records, reminders, and expenses — organized in one calm, reliable app built for real pet parents.
+  </p>
+  <a class="button" href="#">Download on the App Store</a>
+</header>
 
-<section class="hero">
-    <div class="container">
-        <img src="appicon.png" alt="Pet Doc Pro App Icon">
-        <h1>Care smarter.<br><span>Stay prepared.</span></h1>
-        <p>Organize your pet’s records, reminders, and care insights in one simple, secure app.</p>
-        <a class="btn-primary" href="#">Download on the App Store</a>
-    </div>
+<section>
+  <h2>What Pet Doc Pro Does</h2>
+  <ul>
+    <li>Create detailed pet profiles with photos</li>
+    <li>Track health records, vaccinations, and medications</li>
+    <li>Get reminders for vet visits, meds, and important dates</li>
+    <li>Track pet care expenses and documents</li>
+    <li>Store emergency info for quick access</li>
+    <li>Sync reminders with your calendar</li>
+  </ul>
 </section>
 
-<section class="pricing" id="pricing">
-    <div class="container">
-        <div class="section-header">
-            <h2>Choose your plan</h2>
-            <p>3-day free trial. Cancel anytime.</p>
-        </div>
+<section>
+  <h2>Subscription Plans</h2>
 
-        <div class="pricing-grid">
+  <div class="plans">
 
-            <div class="pricing-card">
-                <h3>Starter</h3>
-                <p>1 Pet</p>
-                <div class="price">$4.99 <span>/ month</span></div>
-                <ul>
-                    <li>Core pet tracking</li>
-                    <li>Medical records</li>
-                    <li>Reminders</li>
-                    <li>Expense tracking</li>
-                </ul>
-            </div>
-
-            <div class="pricing-card popular">
-                <span class="badge popular">Popular</span>
-                <h3>Pro</h3>
-                <p>1 Pet</p>
-                <div class="price">$9.99 <span>/ month</span></div>
-                <p><strong>$109.89 yearly (1 month free)</strong></p>
-                <ul>
-                    <li>Everything in Starter</li>
-                    <li>AI care insights</li>
-                    <li>Expense forecasts</li>
-                    <li>Vet visit preparation</li>
-                    <li>Birthday intelligence</li>
-                    <li>Care milestones</li>
-                    <li>Family sharing</li>
-                </ul>
-            </div>
-
-            <div class="pricing-card">
-                <span class="badge best">Best Value</span>
-                <h3>Family</h3>
-                <p>Unlimited Pets</p>
-                <div class="price">$14.99 <span>/ month</span></div>
-                <p><strong>$164.89 yearly (1 month free)</strong></p>
-                <ul>
-                    <li>Everything in Pro</li>
-                    <li>Unlimited pets</li>
-                    <li>Priority support</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="fineprint">
-            Subscriptions are billed through Apple’s App Store.<br>
-            Upgrade, downgrade, or cancel anytime.
-        </div>
+    <div class="plan">
+      <h3>Starter – $4.99 / month</h3>
+      <p><strong>Product ID:</strong> com.petdocpro.starter.monthly</p>
+      <ul>
+        <li>Pet profiles & photos</li>
+        <li>Health records</li>
+        <li>Vaccination tracking</li>
+        <li>Medication reminders</li>
+        <li>Vet appointment alerts</li>
+        <li>Expense tracking</li>
+        <li>Emergency care card</li>
+        <li>Calendar sync</li>
+        <li>Document storage</li>
+      </ul>
     </div>
+
+    <div class="plan">
+      <h3>Pro – $9.99 / month</h3>
+      <p><strong>Product ID:</strong> com.petdocpro.pro.monthly</p>
+      <ul>
+        <li>All Starter features</li>
+        <li>AI care intelligence</li>
+        <li>Expense intelligence</li>
+        <li>Birthday features</li>
+        <li>Vet visit prep</li>
+        <li>Family sharing</li>
+        <li>Care insights & projections</li>
+        <li>Advanced analytics</li>
+      </ul>
+    </div>
+
+    <div class="plan">
+      <h3>Family – $14.99 / month</h3>
+      <p><strong>Product ID:</strong> com.petdocpro.family.monthly</p>
+      <ul>
+        <li>Everything in Pro</li>
+        <li>Unlimited pets</li>
+        <li>Priority support</li>
+        <li>Multi-device sync</li>
+        <li>Premium sharing</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Privacy & Trust</h2>
+  <ul>
+    <li>No account required</li>
+    <li>Your data stays on your device</li>
+    <li>No selling or sharing of personal data</li>
+    <li>Permissions only when needed</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Support</h2>
+  <p>
+    Questions or feedback?<br />
+    Email us at <a href="mailto:petdocpro@gmail.com">petdocpro@gmail.com</a>
+  </p>
 </section>
 
 <footer>
-    <div class="container">
-        © 2026 Pet Doc Pro
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="support.html">Support</a>
-    </div>
+  <a href="privacy.html">Privacy Policy</a>
+  |
+  <a href="terms.html">Terms of Use</a>
+  |
+  <a href="support.html">Support</a>
+  <p>© 2026 Pet Doc Pro</p>
 </footer>
 
 </body>
